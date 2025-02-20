@@ -10,13 +10,13 @@ def run():
     pygame.display.set_caption("Space invaders") #Definicion de titulo de ventana  
     
     #Instancia de la nave
-    nave = SpaceShip(window)
+    nave = SpaceShip(configuraciones, window)
  
     #Bucle principal del juego/eventos
     while True:
         # Reaccion a eventos
-        fj.verificar_eventos()
-        
+        fj.verificar_eventos(nave)
+        nave.update_pos()
         fj.actualizar_pantalla(configuraciones, window, nave)
 
 run()

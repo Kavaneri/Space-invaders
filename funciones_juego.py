@@ -1,11 +1,23 @@
 import sys
 import pygame
 
-def verificar_eventos():
+def verificar_eventos(nave):
     """Responde a la entrada de teclado y raton"""    
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             sys.exit()
+            
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RIGHT:
+                nave.moving_right = True
+            elif event.key == pygame.K_LEFT:
+                nave.moving_left = True
+                
+        elif event.type == pygame.KEYUP:
+            if event.key == pygame.K_RIGHT:
+                nave.moving_right = False
+            elif event.key == pygame.K_LEFT:
+                nave.moving_left = False
             
 def actualizar_pantalla(configuraciones, window, nave):
     """Actualiza las imagenes en la pantalla"""
