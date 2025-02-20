@@ -1,4 +1,4 @@
-import sys
+import funciones_juego as fj
 import pygame
 from config import Config
 from spaceship import SpaceShip
@@ -15,11 +15,9 @@ def run():
     #Bucle principal del juego/eventos
     while True:
         # Reaccion a eventos
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                sys.exit()
-        #Rellenado de la pantalla con el color de fondo
+        fj.verificar_eventos()
         
+        #Rellenado de la pantalla con el color de fondo
         window.fill(configuraciones.bgColor) 
         nave.blitme()
         
