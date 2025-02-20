@@ -17,11 +17,7 @@ def run():
         # Reaccion a eventos
         fj.verificar_eventos()
         
-        #Rellenado de la pantalla con el color de fondo
-        window.fill(configuraciones.bgColor) 
-        nave.blitme()
-        
-        pygame.display.flip() #Redibujar el frame (¿Dependiente de la taza de refrezco de la pantalla?)
+        fj.actualizar_pantalla(configuraciones, window, nave)
 
 run()
         
